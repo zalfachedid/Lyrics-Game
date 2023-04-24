@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    </head>
+    <body>
+    <form method="POST" action="/equipes">
+        <nav class ="navbar navbar-expand-lg navbar-dark bd-dark">
+            <div class ="collapse navbar-collapse" id ="navbar">
+                <div class ="navbar-nav">
+                    <a href="{{ url_for('views.base') }}">Back to home</a>
+                </div>
+            </div>
+        </nav>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <div class="nbr-equipe">
+            <h2>Nombre d'équipes :</h2>
+            <input class="input-style" type="number" name="nombre-equipes" value="{{ nombre_equipes }}">
+            {% if nombre_equipes %}
+                {% for i in range(nombre_equipes) %}
+                    <h2>Equipe {{ i + 1 }} :</h2>
+                    <input  class='input-style' type="text" name="equipe {{ i + 1 }}" value="{{ noms_equipes.get('Equipe {}'.format(i+1)) }}">
+                {% endfor %}                      
+            {% endif %} 
+              
+            <br> 
+            <button class="button-2" type="submit">Save</button>
+            <div>
+                <ul>
+                    <h2>Nombres d'équipes:</h2>
+                    <ul>
+                        il y a {{ nombre_equipes }} groupes
+                    </ul> 
+                    <h2>Equipes enregistrées : </h2>
+                {% if noms_equipes %}
+                    <ul>
+                        {% for i, equipe in noms_equipes.items() %}
+                            <li>{{ i }} : {{ equipe }}</li>
+                        {% endfor %}
+                    </ul>
+                {% endif %} 
+                    </il>
+                </ul>
+            </div>
+        </div>
+    </form> 
+    </body>   
+</html>

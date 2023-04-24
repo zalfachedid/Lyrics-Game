@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> {% block title %}60'S{% endblock %} </title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    </head>
+    <body>
+        <nav class ="navbar navbar-expand-lg navbar-dark bd-dark">
+            <div class ="collapse navbar-collapse" id ="navbar">
+                <div class ="navbar-nav">
+                    <a href="{{ url_for('views.base') }}">Back to home</a>
+                </div>
+            </div>
+        </nav>
+        <br>
+        <br>
+        <br>
+        <h1> {% block titre %} thèmes {% endblock%} </h1>
+        <div class="video-container">
+            <div class="video-wrapper">
+                <video class="my-video" controls>
+                    <source src="{{ url_for('static', filename=my_list[selected_song1]) }}" type="video/mp4">
+
+                    Your browser does not support the video tag.
+                </video>
+                <br>
+                <br>
+                <p class="video-caption"> {% block caption1 %}chanson1{% endblock%} </p>
+            </div>
+            <div class="video-wrapper">
+                <video class="my-video" controls>
+                    <source src="{{ url_for('static', filename=my_list[selected_song2]) }}" type="video/mp4">
+
+                    Your browser does not support the video tag.
+                </video>
+                <br>
+                <br>
+                <p class="video-caption"> {% block caption2 %}chanson2{% endblock%} </p>
+            </div>
+        </div>
+        <br>
+        <br>
+        <div class ="select-container">
+            <form method="POST" action="{{ url_for('select') }}" >
+                <div class="select-button">
+                    <h2>Select a Number</h2>
+                    <select name="score_choix" class="select-button">
+                        <option value="">--choisire un score--</option>
+                        <option value="0">0</option>
+                        <option value="10">10</option>
+                        <option value="20">20</option>
+                        <option value="30">30</option>
+                        <option value="40">40</option>
+                        <option value="50">50</option>
+                    </select>
+                </div>
+
+                <div class="select-button">
+                    <h2>Select a team</h2>
+                    <select name="equipe_choix" class="select-button">
+                        <option value="">--choisire une équipe--</option>
+                        {% if noms_equipes %}
+                            {% for equipe_id, nom_equipe in noms_equipes.items() %}
+                            <option value={{ nom_equipe }} >{{ nom_equipe }}</option>
+                            {% endfor %}
+                        {% endif %}
+                    </select>
+                </div>
+
+                <div class="select-button">
+                    <h2>Select a song</h2>
+                    <select name="chanson_choix" class="select-button">
+                        <option value="">--choisire une chanson--</option>
+                        <option value={% block choix1 %} chanson1 {% endblock%} >{% block choix3 %}chanson1{% endblock%}</option>
+                        <option value={% block choix2 %} chanson2 {% endblock%} >{% block choix4 %}chanson2{% endblock%}</option>
+                    </select>
+                </div>
+
+                <div class="save-button">
+                    <button class="button-2" type="submit">Save</button>
+                </div>
+            </form>
+        </div>
+    </body>
+</html>

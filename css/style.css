@@ -1,0 +1,353 @@
+.button-1-container {
+  display: flex;
+}
+.button-1-container > div{
+  flex:1;
+  margin: 5px;
+}
+
+.button-1 {
+  display: inline-block;
+  background-color: #6a53ee;
+  border-radius: 10px;
+  border: 4px double #cccccc;
+  color: #eeeeee;
+  text-align: center;
+  font-size: 28px;
+  padding: 20px;
+  width: 200px;
+  height: 110px;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+  width: 100%;
+}
+.button-1:hover{
+  background-color: #2d1e81;
+}
+
+.button-2{
+  display: inline-block;
+  background-color: #6a53ee;
+  border-radius: 10px;
+  border: 4px double #cccccc;
+  color: #eeeeee;
+  text-align: center;
+  font-size: 20px;
+  width: 100px;
+  height: 50px;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+.button-2:hover{
+  background-color: #2d1e81;
+}
+
+nav  a{ 
+    float: left; 
+    text-decoration: none; 
+    color: #ffffff; 
+    background: #cccccc; 
+    height: 36px; 
+    line-height: 33px; 
+    padding: 0 10px; 
+    font-family: sans-serif; 
+    font-size: 13px; 
+    transition: .5s; 
+    border-radius: 10px;
+    }
+    nav  a:hover{ 
+    background: #656565; 
+    }
+
+
+h1
+    {
+      font-size: 32px;
+      font-family:Arial, Helvetica, sans-serif;
+      color: rgb(0, 23, 153);
+      padding:16px;
+      font-weight:lighter;
+      text-align:center;
+      margin:16px;  
+    }
+p {
+        margin: 0;
+        text-indent: 3ch;
+        text-align: center;
+        font-size: 24px;
+
+      }
+
+#number-table {
+  position: absolute;
+  top: 50px;
+  left: 50px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  padding: 10px;
+}
+
+#customers {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  display: inline-table;
+  width: 100%;
+  
+}
+
+#customers td,
+#customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+  border-radius: 4px;
+  background-color: #fff;
+  width: 25%;
+  max-width: 200px; 
+  white-space: nowrap; 
+  vertical-align: middle;
+  text-align: center;
+}
+
+#customers tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+#customers tr:hover {
+  background-color: #ddd;
+}
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #4831ce;
+  color: white;
+  border-radius: 4px;
+  
+}
+
+a:link, a:visited {
+  background-color: #999999;
+  color: rgb(8, 8, 8);
+  padding: 14px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  border-radius: 10px;
+}
+a:hover{ 
+  background: #656565; 
+  }
+
+body {
+  font-family: "Helvetica";
+  /* background-color:rgb(186, 190, 193) ; */
+  background-image: url("../music-equalizer-technology-beige-background-with-white-digital-sound-wave_53876-119611.avif");
+  background-size: cover;
+}
+
+h1 {
+  display: block;
+  font-size: 75px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: 0;
+  margin-right: 0;
+  font-weight: bold;
+  padding: 1px 1px;
+  font-family: 'MyCreativeFont', sans-serif;
+}
+
+p{
+  color: #656565;
+  font-family: Tahoma;
+  font-size: 50px;
+  text-align: center;
+}
+h2{
+  color: #4831ce;
+}
+.select-button {
+  display: inline-block;
+  /* position: relative; */
+  cursor: pointer;
+  background-color: #ffffff;
+  border: 2px solid #cccccc;
+  border-radius: 4px;
+  padding: 12px 16px;
+  font-size: 16px;
+  color: #333333;
+  transition: background-color 0.3s, border-color 0.3s;
+}
+
+.select-button::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 50%;
+  right: 12px;
+  transform: translateY(-50%);
+  border: solid #333333;
+  border-width: 0 2px 2px 0;
+  padding: 3px;
+  pointer-events: none;
+  transition: transform 0.3s;
+}
+
+.select-button:hover {
+  background-color: #f8f8f8;
+}
+
+.select-button:focus {
+  outline: none;
+  border-color: #4831ce;
+}
+
+.select-button.active {
+  background-color: #4831ce;
+  color: #ffffff;
+  border-color: #4831ce;
+}
+
+.select-button.active::after {
+  transform: translateY(-50%) rotate(45deg);
+  border-color: #ffffff;
+}
+.h1-base{
+  display: block;
+  font-size: 50px;
+  margin-top: 50px;
+  margin-bottom: 10px;
+  margin-left: 0;
+  margin-right: 0;
+  font-weight: bold;
+  padding: 1px 1px;
+  text-align: center;
+  font-size: 75px;
+  border-radius: 10px;
+  border: 4px double #6a53ee;
+  color: #6a53ee;
+}
+
+
+.input-style {
+  display: block;
+  width: 500px;
+  padding: 12px 16px;
+  font-size: 16px;
+  color: #333333;
+  background-color: #ffffff;
+  border: 2px solid #cccccc;
+  border-radius: 4px;
+  transition: background-color 0.3s, border-color 0.3s;
+}
+
+.input-style:focus {
+  outline: none;
+  border-color: #4831ce;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin-left: 20px;
+  font-weight: bold;
+}
+
+ul li {
+  display: flex;
+  align-items: center;
+  padding: 12px;
+  transition: background-color 0.3s;
+  font-weight: bold;
+}
+
+ul li:hover {
+  background-color: #f8f8f8;
+}
+
+ul li:last-child {
+  border-bottom: none;
+}
+
+ul li:before {
+  content: "•";
+  display: inline-block;
+  margin-right: 8px;
+  color: #4831ce;
+  font-size: 18px;
+}
+
+ul li a {
+  color: #333333;
+  text-decoration: none;
+}
+
+ul li a:hover {
+  color: #4831ce;
+}
+
+
+
+.video-container {
+  display: flex;
+  justify-content: center;  
+}
+
+.video-wrapper{
+  margin: 0 20px;
+  text-align: center;
+}
+
+.my-video {
+  width: 750px;
+  height: 500px;
+  /* margin-left: 100px; */
+}
+
+.video-caption {
+  bottom: 0; 
+  left: 0; 
+  width: 100%; 
+  text-align: center; 
+  color: #4831ce;
+  font-size: 40px;
+}
+.select-container {
+  text-align: center; 
+  /* display: flex; */
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+.select-container select {
+  flex: 1;
+  margin-right: 10px;
+}
+.select-button {
+  background-color: rgb(186, 190, 193);
+  flex-basis: calc(33.33% - 10px);
+  margin-bottom: 10px;
+}
+.save-button {
+  margin-top: 10px;
+  flex-basis: 100%;
+}
+.nbr-equipe{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.navbar-nav a {
+  margin-right: 10px;
+}

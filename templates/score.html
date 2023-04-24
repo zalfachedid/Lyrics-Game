@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Score</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    </head>
+    <body>
+        <nav class ="navbar navbar-expand-lg navbar-dark bd-dark">
+            <div class ="collapse navbar-collapse" id ="navbar">
+                <div class ="navbar-nav">
+                    <a href="{{ url_for('views.base') }}">Back to home</a>
+                </div>
+            </div>
+        </nav>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <div>
+            {% if noms_equipes %}
+                <ul>
+                    {% for equipe_id, nom_equipe in noms_equipes.items() %}
+                    <li>{{ equipe_id }}: {{ nom_equipe }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        </div>
+        <table id="customers">
+            <tr>
+                <th>Nom de l'équipe</th>
+                <th>Score Totale</th>
+            </tr>
+            {% if scores %}
+                {% for equipe_id, score2 in scores.items() %}
+                    <tr>
+                        <td>{{ equipe_id }}</td>
+                        <td>{{ score2 }}</td>
+                    </tr>
+                {% endfor %}
+            {% endif %}
+        </table>
+        <br>
+        <br>
+        <br>
+        <br>
+        <table id="customers">
+            <tr>
+                <th>Equipes</th>
+                <th>chanson</th>
+                <th>Score </th>
+            </tr>
+            {% if info %}
+                {% set chanson_keys = [] %}
+                {% for value in info['chanson'] %}
+                    {% set key = value[0] ~ '-' ~ value[1] ~ '-' ~ value[2] %}
+                    {% if key not in chanson_keys %}
+                        {% set chanson_keys = chanson_keys + [key] %}
+                        <tr>    
+                            <td>{{ value[0] }}</td>
+                            <td>{{ value[1] }}</td>
+                            <td>{{ value[2] }}</td>
+                        </tr>
+                    {% endif %}
+                {% endfor %}
+            {% endif %}
+
+        </table>
+        <br>
+        <br>
+        <br>
+        <br>
+        <!-- <form method="POST" action="/score">
+            <table id="customers">
+                <tr>
+                    <th>Equipes</th>
+                    <th>Jockers</th>
+                </tr>
+                {% if noms_equipes %}
+                    <tr>
+                        {% for equipe_id, nom_equipe in noms_equipes.items() %}
+                        <td>{{ nom_equipe }}</td>
+                        <td>
+                            <table id="customers">
+                                <tr>
+                                    <td>Les 2 mots 
+                                        {% if checkbox_state %}
+                                            <input type="checkbox" name="joker_checkbox" value="checked" checked>
+                                        {% else %}
+                                            <input type="checkbox" name="joker_checkbox" value="checked">
+                                        {% endif %}
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Les premieres lettres <input type="checkbox"></td>
+                                </tr>
+                                <tr>
+                                    <td>Le switch <input type="checkbox"></td>
+                                </tr>
+                                <tr>
+                                    <td>Les choeurs<input type="checkbox"></td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                        {% endfor %}
+                {% endif %}
+            </table>
+        </form> -->
+        <br>
+        <br>
+        <br>
+        <br>
+        <footer>
+            <a href="{{ url_for('reset_score') }}">Reset</a>
+        </footer>
+    </body>
+</html>
+
+
